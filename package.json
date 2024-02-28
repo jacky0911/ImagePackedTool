@@ -1,0 +1,24 @@
+{
+  "name": "imagepackedtool",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "build test",
+    "start": "node script/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jacky0911/ImagePackedTool.git"
+  },
+  "author": "jacky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jacky0911/ImagePackedTool/issues"
+  },
+  "homepage": "https://github.com/jacky0911/ImagePackedTool#readme",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "jimp": "^0.22.12"
+  }
+}

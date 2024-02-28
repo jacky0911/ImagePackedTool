@@ -1,0 +1,6 @@
+{
+  "imageProcessing": {
+    "inputDirectory": "ImageDirectory",
+    "outputDirectory": "ImageDirectory/output_images"
+  }
+}
