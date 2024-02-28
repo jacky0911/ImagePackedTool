@@ -1,0 +1,10 @@
+# Tệp thực thi
+node_modules/
+
+# Tệp log và tạm thời
+*.log
+*.tmp
+
+# Thư mục IDE
+.idea/
+.vscode/
