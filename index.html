@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        label {
+            margin-right: 10px;
+        }
+        #output {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<h1>Image Resizer</h1>
+<form id="imageForm">
+    <label for="inputFolder">Select Input Folder:</label>
+    <input type="file" id="inputFolder" webkitdirectory directory multiple onchange="showFolderInfo()" required>
+    <br>
+    <label for="scale">Scale:</label>
+    <input type="number" id="scale" step="0.1" min="0.1" placeholder="Enter scale" required>
+    <br>
+    <button type="button" onclick="runApp()">Run</button>
+</form>
+<div id="output"></div>
+
+<script>
+    function showFolderInfo() {
+        const inputFolder = document.getElementById('inputFolder').files[0];
+        document.getElementById('output').innerHTML = `<p>Selected Folder: ${inputFolder.name}</p>`;
+    }
+    function runApp() {
+        const inputFolder = document.getElementById('inputFolder').files[0].path;
+        const scale = parseFloat(document.getElementById('scale').value);
+
+        // Call your app.js with inputFolder and scale
+        const { exec } = require('child_process');
+        const command = `node app.js --inputFolder=${inputFolder} --scale=${scale}`;
+
+        exec(command, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Error: ${error.message}`);
+                return;
+            }
+            console.log(`stdout: ${stdout}`);
+            console.error(`stderr: ${stderr}`);
+
+            // Display the output
+            document.getElementById('output').innerHTML = `<p>${stdout}</p>`;
+        });
+    }
+</script>
+</body>
+</html>
