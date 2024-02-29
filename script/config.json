@@ -1,6 +1,7 @@
 {
   "imageProcessing": {
     "inputDirectory": "ImageDirectory",
-    "outputDirectory": "ImageDirectory/output_images"
+    "outputDirectory": "ImageDirectory/output_images",
+    "scaleRatio": 0.5
   }
 }
